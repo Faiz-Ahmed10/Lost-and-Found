@@ -20,7 +20,7 @@ from lostandfound import views
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("", views.index),
-    path("login/", views.login, name="login"),
+    path("", views.index, name="home"),
+    path("login/", views.signin, name="login"),
     path("register/", views.register, name="register")
 ]

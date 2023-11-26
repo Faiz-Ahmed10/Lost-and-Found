@@ -17,14 +17,22 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-color: #f4f4f4;
+            background-image: url("../static/assets/img/header-bg.jpg") !important;
+            background-repeat: no-repeat;
+            background-attachment: scroll;
+            background-position: center center;
+            background-size: cover;
+            color: white;
         }
 
         form {
-            background-color: #fff;
-            padding: 20px;
+            background: transparent;
+            padding: 50px;
             border-radius: 8px;
+            border: white solid;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            
+        
         }
 
         label {
@@ -59,14 +67,19 @@
         }
 
         .footer a {
-            color: #333;
+            color: #ffffff;
             text-decoration: none;
+        }
+        a{
+            text-decoration: none;
+            color: skyblue;
         }
     </style>
 </head>
 <body>
-<div class = "abc">
+<div class="abc">
 <form>
+
     <h2>Login</h2>
     <label for="email">Email:</label>
     <input type="email" id="email" name="email" required>
@@ -74,11 +87,11 @@
     <label for="password">Password:</label>
     <input type="password" id="password" name="password" required>
 
-    <button type="submit">Login</button>
+    <button type="submit">Login</button><p>Don't have an account? <a href="#">Register here</a>.</p>
 </form>
 
 <div class="footer">
-    <p>Don't have an account? <a href="#">Register here</a>.</p>
+    
 </div>
 </div>
 

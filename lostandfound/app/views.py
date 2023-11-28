@@ -13,18 +13,20 @@ def index(request):
 
 def signin(request):
     if request.method == "POST":
-        name = request.POST['name']
+        email = request.POST['email']
         password = request.POST['password']
 
-        user = authenticate(user=name,password=password)
-        
-        if user is not None:
-            login(request,user)
-            uname = user.username
-            return render(request,"index.html",{'uname':uname})
-        else:
-            messages.error(request, f'please create a account to login !')
-            return redirect('register')
+        # user = authenticate(email=name,password=password)
+        try:
+            user = Users.objects.get(email=email,password=password)
+            print(user)
+            # login(request,user)
+            uname = Users.user
+            print(uname)
+            return render(request,"index.html",{'uname':uname,'user':user})
+        except Users.DoesNotExist:  
+           messages.error(request, f'please create a account to login !')
+           return redirect('register')   
     return render(request,"login.html")
 
 def register(request):

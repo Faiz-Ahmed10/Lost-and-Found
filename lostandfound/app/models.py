@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import AbstractUser
 # from django.contrib.auth.models import User
 # Create your models here.
 class Users(models.Model):
@@ -10,6 +11,6 @@ class Users(models.Model):
 
         # Use a PositiveIntegerField for a unique ID with a maximum of 10 digits
     #   id = models.PositiveIntegerField(primary_key=True, unique=True, editable=False)
-      id = models.CharField(primary_key=True, max_length=200)
+      id = models.CharField(primary_key=True,max_length=200)
       def __str__(self):
-        return f'{self.user} ({self.id})'
+        return self.user

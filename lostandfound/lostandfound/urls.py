@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from lostandfound import views
+from app import views
 from django.contrib.auth import views as auth
 
 urlpatterns = [

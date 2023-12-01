@@ -48,3 +48,4 @@ def signout(request):
     logout(request)
     messages.error(request, f'logged out successfull !')
     return redirect('home')
+# login inssue on back tab.....

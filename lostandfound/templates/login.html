@@ -166,21 +166,23 @@
 
 
                 <form id="login" class="input-group" action="" method="POST">
+                    {% csrf_token %}
 
-                    <input type="text" class="input-field" placeholder="User Name " required>
-                    <input type="text" class="input-field" placeholder="Enter Passowrd" required>
+                    <input type="email" class="input-field" placeholder="Email" id="email" name="email" required>
+                    <input type="text" class="input-field" placeholder="Enter Passowrd" id="password" name="password" required>
                     <button type="submit" class="submit-btn">Log in</button>
                 </form>
 
 
                 <form id="register" class="input-group" action="" method="POST">
+                    {% csrf_token %}
 
-                    <input type="text" class="input-field" placeholder="User Name" required>
-                    <input type="text" class="input-field" placeholder="Type Email" required>
-                    <input type="text" class="input-field" placeholder="Enter Password" required>
-                    <input type="text" class="input-field" placeholder="Confirm Password" required>
+                    <input type="text" class="input-field" placeholder="User Name" id="name" name="name" required>
+                    <input type="email" class="input-field" placeholder="Type Email" id="email" name="email" required>
+                    <input type="password" class="input-field" placeholder="Enter Password" id="password" name="password" required>
+                    <input type="password" class="input-field" placeholder="Confirm Password" id="confirmPassword" name="confirmPassword" required>
 
-                    <button type="submit" class="submit-btn">Register</button>
+                    <button type="submit" class="submit-btn" value="Register">Register</button>
 
                 </form>
             </div>

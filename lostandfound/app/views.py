@@ -23,7 +23,8 @@ def signin(request):
             # login(request,user)
             uname = Users.user
             print(uname)
-            return render(request,"index.html",{'uname':uname,'user':user})
+            # return render(request,"index.html",{'uname':uname,'user':user})
+            return redirect('home')
         except Users.DoesNotExist:  
            messages.error(request, f'please create a account to login !')
            return redirect('register')   

@@ -2,12 +2,6 @@
 
 {% block title %}Login{% endblock title %}
 {% block body %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
     <style>
         .abc {
             font-family: Arial, sans-serif;
@@ -25,41 +19,131 @@
             color: white;
         }
 
-        form {
-            background: transparent;
-            padding: 50px;
+        .form-box {
+            width: 400px;
+            height: 400px;
+            position: relative;
+            margin: 6% auto;
+            background: #FFFFFF;
+            padding: 5px;
+            background-color: li;
+            overflow: hidden;
+            border-radius: 20px;
+            align-items: center;
+            background-color: #fdffff;
+            box-shadow: 0 4px 8px rgba(45, 45, 0.2);
+            margin-top: 100px !important;
+        }
+
+        .button-box {
+            width: 220px;
+            margin: 35px auto;
+            position: relative;
+            /* box-shadow: 0 0 20px 9px rgba(65, 105, 225, 0.3); */
+            box-shadow: 0 4px 8px rgba(24, 11, 11, 0.2);
             border-radius: 8px;
-            border: white solid;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            
-        
         }
 
-        label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: bold;
+        .toggle-btn {
+            padding: 10px 30px;
+            cursor: pointer;
+            background: transparent;
+            border: 0;
+            outline: none;
+            position: relative;
+
+
         }
 
-        input {
+        #btn {
+            top: 0;
+            left: 0;
+            position: absolute;
+            width: 110px;
+            height: 100%;
+            background: linear-gradient(to right, #3385FF, #3385FF);
+            color: #FFFFFF;
+            text-decoration: none;
+            border-radius: 8px;
+            Transition: .5s;
+
+        }
+
+        .input-group {
+            /* top: 129px; */
+            position: absolute;
+            width: 280px;
+            Transition: top o.5s ease;
+        }
+
+        .input-field {
             width: 100%;
-            padding: 8px;
-            margin-bottom: 16px;
-            box-sizing: border-box;
+            padding: 10px 0;
+            margin: 5px 0;
+            border-left: 0;
+            border-top: 0;
+            border-right: 0;
+            border-bottom: 1px solid #999;
+            outline: none;
+            background: transparent;
         }
 
-        button {
-            background-color: #333;
-            color: #fff;
+        .submit-btn {
+            width: 85%;
+            padding: 10px 30px;
+            cursor: pointer;
+            display: block;
+            margin: 15px;
+            /* background:linear-gradient(to right, #007AFF,#007AFF);  */
+            border: 0;
+            outline: none;
+            border-radius: 8px;
+            /* Style for the button with white font color */
+
+            background-color: white;
+            color: #3385FF;
+            /* Set the font color to white */
             padding: 10px 20px;
             border: none;
-            border-radius: 4px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(24, 24, 24, 0.2);
+            transition: background-color 0.2s, color 0.2s;
+        }
+
+        .submit-btn:hover {
+            background-color: #3385FF;
+            /* Change background color on hover */
+            color: white;
+            /* Change font color on hover */
+            /* transform: scale(1.060); */
+        }
+
+        .chech-box {
+            margin: 30px 10px 30px 0;
             cursor: pointer;
         }
 
-        button:hover {
-            background-color: #555;
+        span {
+            color: #777;
+            font-size: 12px;
+            bottom: 68px;
+            position: absolute;
         }
+
+        #login {
+            left: 50px;
+
+        }
+
+        #register {
+            left: 450px;
+        }
+
+        /* CSS FILE FOR LOGIN AND SIGNUP PAGE ENDS HERE */
 
         .footer {
             margin-top: 20px;
@@ -70,35 +154,61 @@
             color: #ffffff;
             text-decoration: none;
         }
-        a{
-            text-decoration: none;
-            color: skyblue;
-        }
     </style>
-</head>
-<body>
-<div class="abc">
-<form action="" method="POST" >
-    {% csrf_token %}
-    <h2>Login</h2>
-    <label for="name">Enter your Email:</label>
-    <input type="email" id="email" name="email" required>
+    <div class="abc">
+            <div class="form-box">
+                <div class="button-box">
+                    <div id="btn"> </div>
+                    <button type="button " class="toggle-btn" onclick="login()">Log In </button>
+                    <button type="button " class="toggle-btn" onclick="register()"
+                        style="width: 109px; height: auto;">Register</button>
+                </div>
 
-    <label for="password">Password:</label>
-    <input type="password" id="password" name="password" required>
 
-    <button type="submit">Login</button><p>Don't have an account? <a href="/register">Register here</a>.</p>
-</form>
+                <form id="login" class="input-group" action="" method="POST">
 
+                    <input type="text" class="input-field" placeholder="User Name " required>
+                    <input type="text" class="input-field" placeholder="Enter Passowrd" required>
+                    <button type="submit" class="submit-btn">Log in</button>
+                </form>
+
+
+                <form id="register" class="input-group" action="" method="POST">
+
+                    <input type="text" class="input-field" placeholder="User Name" required>
+                    <input type="text" class="input-field" placeholder="Type Email" required>
+                    <input type="text" class="input-field" placeholder="Enter Password" required>
+                    <input type="text" class="input-field" placeholder="Confirm Password" required>
+
+                    <button type="submit" class="submit-btn">Register</button>
+
+                </form>
+            </div>
+
+        </div>
 <div class="footer">
-    
-</div>
-</div>
 
-</body>
-</html>
+</div>
+</div>
+<script>
+    var x = document.getElementById("login");
+    var y = document.getElementById("register");
+    var z = document.getElementById("btn");
+
+    function register() {
+        x.style.left = "-400px";
+        y.style.left = "50px";
+        z.style.left = "110px";
+    }
+
+    function login() {
+        x.style.left = "50px";
+        y.style.left = "450px";
+        z.style.left = "0";
+
+    }
+
+
+</script>
 
 {% endblock body %}
-
-
-

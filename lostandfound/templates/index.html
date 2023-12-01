@@ -6,6 +6,10 @@
 <!-- Masthead-->
 <header class="masthead">
     <div class="container px-4 px-lg-5">
+        {% if user.is_authenticated %}
+                <div class="masthead-subheading"><p class="animated-text">Hi, {{uname}}</p></div>
+                <br>
+                {% endif %}
         <div class="masthead-subheading">
             <p class="animated-text">Have you lost something?</p>
         </div><br>
